@@ -301,6 +301,12 @@ export interface Page {
                       value?: string | null;
                       id?: string | null;
                       blockName?: string | null;
+                      blockType: 'title';
+                    }
+                  | {
+                      value?: string | null;
+                      id?: string | null;
+                      blockName?: string | null;
                       blockType: 'text';
                     }
                   | {
@@ -387,6 +393,26 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'form';
+          }
+        | {
+            'Quienes somos'?: {
+              title?: string | null;
+              content?: string | null;
+              file?: (string | null) | Media;
+            };
+            Mision?: {
+              title?: string | null;
+              content?: string | null;
+              file?: (string | null) | Media;
+            };
+            Vision?: {
+              title?: string | null;
+              content?: string | null;
+              file?: (string | null) | Media;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'Quienes somos';
           }
       )[]
     | null;
@@ -652,6 +678,13 @@ export interface PagesSelect<T extends boolean = true> {
               body?:
                 | T
                 | {
+                    title?:
+                      | T
+                      | {
+                          value?: T;
+                          id?: T;
+                          blockName?: T;
+                        };
                     text?:
                       | T
                       | {
@@ -751,6 +784,33 @@ export interface PagesSelect<T extends boolean = true> {
                     id?: T;
                   };
               boton?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'Quienes somos'?:
+          | T
+          | {
+              'Quienes somos'?:
+                | T
+                | {
+                    title?: T;
+                    content?: T;
+                    file?: T;
+                  };
+              Mision?:
+                | T
+                | {
+                    title?: T;
+                    content?: T;
+                    file?: T;
+                  };
+              Vision?:
+                | T
+                | {
+                    title?: T;
+                    content?: T;
+                    file?: T;
+                  };
               id?: T;
               blockName?: T;
             };

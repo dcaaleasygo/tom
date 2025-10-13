@@ -35,7 +35,7 @@ export function Header() {
     <header className="header-container">
       <div className="header-inner">
        <div className="header-logo">
-  <a href="https://toponmind.com/inicio/">
+  <a href="/">
     <img src={header.logo.url} alt="Log" />
   </a>
 </div>

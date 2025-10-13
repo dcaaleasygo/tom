@@ -1,0 +1,28 @@
+.Politica {
+  padding-top: 10rem;
+  max-width: 100%;
+  min-height: 100vh;
+  background: #fff;
+
+}
+
+.Politica p {
+  text-align: justify;
+  margin: 0 auto 2rem;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+  width: 35rem;
+  transform: scaleY(100rem);
+    transform: translatex(40rem);
+}
+
+.Politica .titulo p {
+  font-size: 34px;
+  text-align: center;
+  color: #eb265d;
+  text-transform: uppercase;
+  font-weight: bold;
+}

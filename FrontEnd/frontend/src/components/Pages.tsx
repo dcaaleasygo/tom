@@ -17,7 +17,7 @@ interface TendenciasPayloadBlock {
 
 interface FormularioBlock {
   id: string
-  blockType: 'form' // usa 'form', no 'Formulario' (en Payload está así)
+  blockType: 'form'
   titulo: string
   inputs: { 'place holder': string }[]
   boton: string
@@ -184,8 +184,10 @@ interface Page {
 export function Pages() {
   const [pages, setPages] = useState<Page | null>(null)
 
+  const slug = 'home'
+
   useEffect(() => {
-    fetch('http://localhost:3000/api/pages')
+    fetch(`http://localhost:3000/api/pages?where[slug][equals]=${slug}`)
       .then(res => res.json())
       .then(data => {
         if (data.docs && data.docs.length > 0) {
@@ -193,7 +195,8 @@ export function Pages() {
         }
       })
       .catch(err => console.error(err))
-  }, [])
+  }, [slug])
+
 
   if (!pages) return null
 
@@ -206,7 +209,7 @@ export function Pages() {
     layout: tendenciasBlocks.map((block, index) => {
       const bloques: BloqueGrupo[] = [];
 
-      const cards = block.bloques ?? []; // usa [] si es undefined
+      const cards = block.bloques ?? [];
 
       for (let i = 0; i < cards.length; i += 4) {
         bloques.push({ cards: cards.slice(i, i + 4) });
@@ -283,7 +286,6 @@ export function Pages() {
                               : item.file.sizes?.[selectedSize]?.url || item.file.url
                             return <img key={item.id} src={imageUrl} alt={item.file.alt || item.file.filename} />
                           }
-
                           return null
                         })}
 
@@ -616,5 +618,5 @@ export function Pages() {
   )
 }
 
-
+export default Pages
 

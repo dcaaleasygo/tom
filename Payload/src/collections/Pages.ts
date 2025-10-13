@@ -169,6 +169,10 @@ export const Pages: CollectionConfig = {
               type: 'blocks',
               blocks: [
                 {
+                  slug: 'title',
+                  fields: [{ name: 'value', type: 'text' }],
+                },
+                {
                   slug: 'text',
                   fields: [{ name: 'value', type: 'text' }],
                 },
@@ -271,6 +275,8 @@ export const Pages: CollectionConfig = {
             },
           ],
         },
+
+        // ======== Formulario ========
         {
           slug: 'form',
           fields: [
@@ -299,7 +305,41 @@ export const Pages: CollectionConfig = {
               required: true,
             },
           ]
+        },
+        //  ======== ¿Quienes somos? ========
+        {
+          slug: 'Quienes somos',
+          fields: [
+            {
+              name: 'Quienes somos',
+              type: 'group',
+              fields: [
+                { name: 'title', type: 'text' },
+                { name: 'content', type: 'text' },
+                { name: 'file', type: 'upload', relationTo: 'media' },
+              ],
+            },
+            {
+              name: 'Mision',
+              type: 'group',
+              fields: [
+                { name: 'title', type: 'text' },
+                { name: 'content', type: 'text' },
+                { name: 'file', type: 'upload', relationTo: 'media' },
+              ],
+            },
+            {
+              name: 'Vision',
+              type: 'group',
+              fields: [
+                { name: 'title', type: 'text' },
+                { name: 'content', type: 'text' },
+                { name: 'file', type: 'upload', relationTo: 'media' },
+              ],
+            }
+          ]
         }
       ]
-}]}
+    }]
+}
 
