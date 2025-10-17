@@ -395,20 +395,23 @@ export interface Page {
             blockType: 'form';
           }
         | {
-            'Quienes somos'?: {
-              title?: string | null;
+            'Quienes somos': {
+              titulo?: string | null;
               content?: string | null;
               file?: (string | null) | Media;
+              boton: string;
             };
             Mision?: {
-              title?: string | null;
+              titulo?: string | null;
               content?: string | null;
               file?: (string | null) | Media;
+              background?: (string | null) | Media;
             };
             Vision?: {
-              title?: string | null;
+              titulo?: string | null;
               content?: string | null;
               file?: (string | null) | Media;
+              background?: (string | null) | Media;
             };
             id?: string | null;
             blockName?: string | null;
@@ -793,23 +796,26 @@ export interface PagesSelect<T extends boolean = true> {
               'Quienes somos'?:
                 | T
                 | {
-                    title?: T;
+                    titulo?: T;
                     content?: T;
                     file?: T;
+                    boton?: T;
                   };
               Mision?:
                 | T
                 | {
-                    title?: T;
+                    titulo?: T;
                     content?: T;
                     file?: T;
+                    background?: T;
                   };
               Vision?:
                 | T
                 | {
-                    title?: T;
+                    titulo?: T;
                     content?: T;
                     file?: T;
+                    background?: T;
                   };
               id?: T;
               blockName?: T;

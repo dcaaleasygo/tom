@@ -314,27 +314,30 @@ export const Pages: CollectionConfig = {
               name: 'Quienes somos',
               type: 'group',
               fields: [
-                { name: 'title', type: 'text' },
+                { name: 'titulo', type: 'text' },
                 { name: 'content', type: 'text' },
                 { name: 'file', type: 'upload', relationTo: 'media' },
+                {name: 'boton',type: 'text',label: 'boton',required: true}
               ],
             },
             {
               name: 'Mision',
               type: 'group',
               fields: [
-                { name: 'title', type: 'text' },
+                { name: 'titulo', type: 'text' },
                 { name: 'content', type: 'text' },
                 { name: 'file', type: 'upload', relationTo: 'media' },
+                {name: 'background', type: 'upload', relationTo: 'media' },
               ],
             },
             {
               name: 'Vision',
               type: 'group',
               fields: [
-                { name: 'title', type: 'text' },
+                { name: 'titulo', type: 'text' },
                 { name: 'content', type: 'text' },
                 { name: 'file', type: 'upload', relationTo: 'media' },
+               {name: 'background', type: 'upload', relationTo: 'media' },
               ],
             }
           ]

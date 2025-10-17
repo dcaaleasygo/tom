@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import '../Styles/PoliticasDePrivacidad.css'
+import '../Styles/QuienesSomos.css'
 
 interface Media {
   id: string
@@ -8,22 +8,36 @@ interface Media {
   filename: string
 }
 
-interface Grupo {
-  title: string
+interface BloqueContenido {
+  titulo: string
   content: string
   file?: Media
+  boton: string
+  backgroud?: Media
 }
 
-interface Quienes {
+interface ButtonBlock {
+  id: string
+  blockType: 'buttonText'
+  buttonText: string
+  url: string
+}
+
+
+interface LayoutBlock {
+  ["Quienes somos"]?: BloqueContenido
+  ["Mision"]?: BloqueContenido
+  ["Vision"]?: BloqueContenido
+}
+
+interface Quien {
   title: string
   slug: string
-  QuienesSomos: Grupo
-  Mision: Grupo
-  Vision: Grupo
+  layout: LayoutBlock[]
 }
 
 export function Quienes() {
-  const [quienes, setQuienes] = useState<Quienes | null>(null)
+  const [quienes, setQuienes] = useState<Quien | null>(null)
   const slug = 'quienes-somos'
 
   useEffect(() => {
@@ -31,6 +45,7 @@ export function Quienes() {
       .then(res => res.json())
       .then(data => {
         if (data.docs && data.docs.length > 0) {
+          console.log('DATA:', data.docs[0])
           setQuienes(data.docs[0])
         }
       })
@@ -39,46 +54,65 @@ export function Quienes() {
 
   if (!quienes) return null
 
+  const layout = quienes.layout[0]
+
+  const quienesSomos = layout["Quienes somos"]
+  const mision = layout["Mision"]
+  const vision = layout["Vision"]
+
   return (
-    <div className="Politica">
-      {/* Sección: Quienes Somos */}
-      <section className="content">
-        <h2 className="titulo">{quienes.QuienesSomos.title}</h2>
-        <p className="texto">{quienes.QuienesSomos.content}</p>
-        {quienes.QuienesSomos.file && (
-          <img
-            src={quienes.QuienesSomos.file.url}
-            alt={quienes.QuienesSomos.file.alt}
-            className="imagen"
-          />
-        )}
-      </section>
+    <div className="quienes-somos">
 
-      {/* Sección: Misión */}
-      <section className="content">
-        <h2 className="titulo">{quienes.Mision.title}</h2>
-        <p className="texto">{quienes.Mision.content}</p>
-        {quienes.Mision.file && (
-          <img
-            src={quienes.Mision.file.url}
-            alt={quienes.Mision.file.alt}
-            className="imagen"
-          />
-        )}
-      </section>
 
-      {/* Sección: Visión */}
-      <section className="content">
-        <h2 className="titulo">{quienes.Vision.title}</h2>
-        <p className="texto">{quienes.Vision.content}</p>
-        {quienes.Vision.file && (
-          <img
-            src={quienes.Vision.file.url}
-            alt={quienes.Vision.file.alt}
-            className="imagen"
-          />
-        )}
-      </section>
+      {quienesSomos && (
+        <section
+          className="section-quienes"
+          style={{
+            backgroundImage: quienesSomos.file?.url
+              ? `linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(${quienesSomos.file.url})`
+              : undefined,
+
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+            padding: '2rem',
+          }}
+        >
+          <h2 className="titulo">{quienesSomos.titulo}</h2>
+          <p>{quienesSomos.content}</p>
+
+          <button type="button" className="boton">
+            <a href={quienesSomos.boton} className="boton">{quienesSomos.boton}</a>
+            {quienesSomos.boton}
+          </button>
+        </section>
+      )}
+
+
+
+      {mision && (
+        <section className="section-mision">
+          
+          {mision.file && (
+            <img src={mision.file.url} alt={mision.file.alt || ''} />
+          )}
+          <p>{mision.content}</p>
+        </section>
+      )}
+
+
+      {vision && (
+        <section className="section-vision">
+          <h2 className="titulo">{vision.titulo}</h2>
+          {vision.file && (
+            <img src={vision.file.url} alt={vision.file.alt || ''} />
+          )}
+          <p>{vision.content}</p>
+        </section>
+      )}
     </div>
   )
 }

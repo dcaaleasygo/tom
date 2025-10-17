@@ -143,6 +143,10 @@ interface BannerSecundarioBlock {
   images?: Media
 }
 
+interface BloqueGrupo{
+
+}
+
 type BodyBlock = TextBlock | GifBlock | ImageBlock | ImageCenterBlock | RowBlock | ButtonBlock | ModerTextBlock
   | BannerSecundarioBlock | ContentHeader2Block | ServiciosBlock | TendenciasPayloadBlock | DatosFormularioBlock | FormularioBlock
 
@@ -584,10 +588,9 @@ export function Pages() {
                         <p>{block.contenido}</p>
                         {Array.isArray(block.logos) && block.logos.map((logo, i) => (
                           <a key={i} href={logo.url} target="_blank" rel="noopener noreferrer">
-                            <img src={logo.imagen?.url} alt={logo.imagen?.alt || 'logo'} />
+                            <img src={logo.imagen?.url} alt={logo.imagen?.alt || 'logo'} />     
                           </a>
                         ))}
-
                       </div>
                     ))}
                 </div>
