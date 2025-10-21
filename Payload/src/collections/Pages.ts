@@ -1,3 +1,4 @@
+import { group } from 'console'
 import { CollectionConfig } from 'payload'
 
 export const Pages: CollectionConfig = {
@@ -339,7 +340,11 @@ export const Pages: CollectionConfig = {
                 { name: 'file', type: 'upload', relationTo: 'media' },
                {name: 'background', type: 'upload', relationTo: 'media' },
               ],
-            }
+            },
+            
+            {name: 'chavoSaltando', type: 'upload', relationTo: 'media' },
+
+            
           ]
         }
       ]

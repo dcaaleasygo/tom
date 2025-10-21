@@ -13,7 +13,8 @@ interface BloqueContenido {
   content: string
   file?: Media
   boton: string
-  backgroud?: Media
+  background?: Media
+  chavoSaltando: Media
 }
 
 interface ButtonBlock {
@@ -28,6 +29,7 @@ interface LayoutBlock {
   ["Quienes somos"]?: BloqueContenido
   ["Mision"]?: BloqueContenido
   ["Vision"]?: BloqueContenido
+  ["chavoSaltando"]?: Media
 }
 
 interface Quien {
@@ -43,9 +45,12 @@ export function Quienes() {
   useEffect(() => {
     fetch(`http://localhost:3000/api/pages?where[slug][equals]=${slug}`)
       .then(res => res.json())
+
       .then(data => {
         if (data.docs && data.docs.length > 0) {
-          console.log('DATA:', data.docs[0])
+          console.log('LAYOUT DETALLADO:', JSON.stringify(data.docs[0].layout[0], null, 2))
+
+
           setQuienes(data.docs[0])
         }
       })
@@ -59,11 +64,12 @@ export function Quienes() {
   const quienesSomos = layout["Quienes somos"]
   const mision = layout["Mision"]
   const vision = layout["Vision"]
+  const chavoSaltando = layout["chavoSaltando"]
 
   return (
     <div className="quienes-somos">
 
-
+    <div className='seccion-1'>
       {quienesSomos && (
         <section
           className="section-quienes"
@@ -78,7 +84,7 @@ export function Quienes() {
             justifyContent: 'center',
             alignItems: 'center',
             textAlign: 'center',
-            padding: '2rem',
+
           }}
         >
           <h2 className="titulo">{quienesSomos.titulo}</h2>
@@ -91,28 +97,64 @@ export function Quienes() {
         </section>
       )}
 
+      <div className='chavoSaltando'>
+  {chavoSaltando && (
+    <img src={chavoSaltando.url} alt={chavoSaltando.alt || ''} />
+  )}
+</div>
 
 
-      {mision && (
-        <section className="section-mision">
-          
-          {mision.file && (
-            <img src={mision.file.url} alt={mision.file.alt || ''} />
-          )}
-          <p>{mision.content}</p>
-        </section>
-      )}
+</div>
+
+      <div className='vision_mision'>
+        {mision && (
+          <section className="section-mision"
+            style={{
+              backgroundImage: mision.background?.url
+                ? `linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(${mision.background.url})`
+                : undefined,
+
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'center',
+              backgroundSize: '75% 100%',
+
+            }}
+          >
+
+            {mision.file && (
+              <img src={mision.file.url} alt={mision.file.alt || ''} />
+            )}
+            <p>{mision.content}</p>
+          </section>
+        )}
 
 
-      {vision && (
-        <section className="section-vision">
-          <h2 className="titulo">{vision.titulo}</h2>
-          {vision.file && (
-            <img src={vision.file.url} alt={vision.file.alt || ''} />
-          )}
-          <p>{vision.content}</p>
-        </section>
-      )}
+        {vision && (
+          <section className="section-vision"
+            style={{
+              backgroundImage: vision.background?.url
+                ? `linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(${vision.background.url})`
+                : undefined,
+
+
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'center',
+              backgroundSize: '75% 100%',
+            }}>
+            <h2 className="titulo">{vision.titulo}</h2>
+            {vision.file && (
+              <img src={vision.file.url} alt={vision.file.alt || ''} />
+            )}
+            <p>{vision.content}</p>
+          </section>
+        )}
+      </div>
     </div>
   )
 }

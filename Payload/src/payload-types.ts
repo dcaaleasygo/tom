@@ -413,6 +413,7 @@ export interface Page {
               file?: (string | null) | Media;
               background?: (string | null) | Media;
             };
+            chavoSaltando?: (string | null) | Media;
             id?: string | null;
             blockName?: string | null;
             blockType: 'Quienes somos';
@@ -817,6 +818,7 @@ export interface PagesSelect<T extends boolean = true> {
                     file?: T;
                     background?: T;
                   };
+              chavoSaltando?: T;
               id?: T;
               blockName?: T;
             };
