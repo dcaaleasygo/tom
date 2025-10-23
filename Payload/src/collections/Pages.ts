@@ -318,7 +318,7 @@ export const Pages: CollectionConfig = {
                 { name: 'titulo', type: 'text' },
                 { name: 'content', type: 'text' },
                 { name: 'file', type: 'upload', relationTo: 'media' },
-                {name: 'boton',type: 'text',label: 'boton',required: true}
+                { name: 'boton', type: 'text', label: 'boton', required: true }
               ],
             },
             {
@@ -328,7 +328,7 @@ export const Pages: CollectionConfig = {
                 { name: 'titulo', type: 'text' },
                 { name: 'content', type: 'text' },
                 { name: 'file', type: 'upload', relationTo: 'media' },
-                {name: 'background', type: 'upload', relationTo: 'media' },
+                { name: 'background', type: 'upload', relationTo: 'media' },
               ],
             },
             {
@@ -338,15 +338,37 @@ export const Pages: CollectionConfig = {
                 { name: 'titulo', type: 'text' },
                 { name: 'content', type: 'text' },
                 { name: 'file', type: 'upload', relationTo: 'media' },
-               {name: 'background', type: 'upload', relationTo: 'media' },
+                { name: 'background', type: 'upload', relationTo: 'media' },
               ],
             },
-            
-            {name: 'chavoSaltando', type: 'upload', relationTo: 'media' },
 
-            
+            { name: 'chavoSaltando', type: 'upload', relationTo: 'media' },
+
+
+          ]
+        },
+        //  ======== CONTACTANOS ========
+
+        {
+          slug: "dekmfer",
+          fields: [
+            { name: 'Nombre', type: 'text', required: true },
+            { name: 'Correo', type: 'text', required: true },
+            { name: 'Telefono', type: 'text', required: true },
+            {
+              name: 'Asunto',
+              type: 'select',
+              required: true,
+              options: [
+                { label: 'Consulta general', value: 'consulta' },
+                { label: 'Soporte técnico', value: 'soporte' },
+                { label: 'Otros', value: 'otros' }
+              ]
+            },
+            { name: 'Mensaje', type: 'text', required: true }   
           ]
         }
+
       ]
     }]
 }

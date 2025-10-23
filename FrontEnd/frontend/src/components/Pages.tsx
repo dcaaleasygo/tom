@@ -436,9 +436,12 @@ export function Pages() {
                         {bodyBlocks.map(item => {
                           if (item.blockType === 'buttonText') {
                             return (
+                              <a href={item.url} className='go-formulario'>
+
                               <button key={item.id} type="button" className="boton">
                                 {item.buttonText}
                               </button>
+                              </a>
                             )
                           }
                           return null

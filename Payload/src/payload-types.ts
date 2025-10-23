@@ -418,6 +418,16 @@ export interface Page {
             blockName?: string | null;
             blockType: 'Quienes somos';
           }
+        | {
+            Nombre: string;
+            Correo: string;
+            Telefono: string;
+            Asunto: 'consulta' | 'soporte' | 'otros';
+            Mensaje: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'dekmfer';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -819,6 +829,17 @@ export interface PagesSelect<T extends boolean = true> {
                     background?: T;
                   };
               chavoSaltando?: T;
+              id?: T;
+              blockName?: T;
+            };
+        dekmfer?:
+          | T
+          | {
+              Nombre?: T;
+              Correo?: T;
+              Telefono?: T;
+              Asunto?: T;
+              Mensaje?: T;
               id?: T;
               blockName?: T;
             };

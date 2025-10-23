@@ -1,0 +1,88 @@
+.fof{
+    display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 87vh;
+  margin-top: 90px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #f2f2f2;
+
+} .form{
+  width: 45%;     
+  height: 45vh;
+  margin-top: 20rem;
+  transform: translate(0%, -37%);
+  background-color: #fff;
+  border-radius: 2%;
+}
+
+.form .titulo {
+    font-family: 'Open Sans', sans-serif;
+  color: #121661;
+  font-size: 35px;
+  line-height: 40px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-shadow: -3px 2px 0 rgba(41, 5, 16, 0.15);
+}
+
+.datos input {
+  margin-left: 2rem;
+  width: 80%;
+  padding: 0.6rem 0;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.datos input::placeholder {
+  color: #999;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.datos input:focus {
+  border-bottom: 2px solid #0e66a3;
+}
+
+.datos input:focus::placeholder {
+  color: #0e66a3;
+  transform: translateY(-0.3rem);
+  font-size: 0.85rem;
+}
+
+.datos .boton {
+  margin-top: 1rem;
+  background-color: #121661;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 90%;
+  margin-left: 1rem;
+}
+
+.datos .boton:hover {
+  background-color: #094d7d;
+  transform: scale(1.05);
+}

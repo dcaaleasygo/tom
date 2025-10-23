@@ -6,6 +6,9 @@ import { Pages } from "./components/Pages"
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Politicas } from "./components/PoliticasDePrivacidad"
 import { Quienes } from "./components/QuienesSomos";
+import Tendencia from "./components/Tendencia";
+import { Contacto } from "./components/Contactanos";
+
 
 function App() {
   return (
@@ -19,7 +22,7 @@ function App() {
               path="/"
               element={<Pages />}
             />
-             <Route
+            <Route
               path="/politica-de-privacidad"
               element={<Politicas />}
             />
@@ -28,6 +31,17 @@ function App() {
               path="/quienes-somos"
               element={<Quienes />}
             />
+
+            <Route
+              path="/tendencias"
+              element={<Tendencia />}
+            />
+
+            <Route
+              path="/contactanos"
+              element={<Contacto />}
+            />
+
           </Routes>
         </main>
 

@@ -104,6 +104,7 @@
   text-decoration: none;
   font-weight: 400;
   transition: color 0.2s ease;
+  transform: translateX(10rem);
 }
 
 /*.footer-nav img{

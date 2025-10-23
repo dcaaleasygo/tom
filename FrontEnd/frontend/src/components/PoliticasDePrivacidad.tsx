@@ -99,9 +99,6 @@ export function Politicas() {
         </section>
       ))}
   </div>
-)
-   
-    
-}
+)}
 
 export default Politicas
