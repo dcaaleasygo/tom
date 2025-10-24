@@ -15,6 +15,7 @@ interface BloqueContenido {
   boton: string
   background?: Media
   chavoSaltando: Media
+  url:  string
 }
 
 interface ButtonBlock {
@@ -29,6 +30,7 @@ interface LayoutBlock {
   ["Quienes somos"]?: BloqueContenido
   ["Mision"]?: BloqueContenido
   ["Vision"]?: BloqueContenido
+  ["Url"]?: BloqueContenido
   ["chavoSaltando"]?: Media
 }
 
@@ -91,8 +93,8 @@ export function Quienes() {
           <p>{quienesSomos.content}</p>
 
           <button type="button" className="boton">
-            <a href={quienesSomos.boton} className="boton">{quienesSomos.boton}</a>
-            {quienesSomos.boton}
+            <a href={quienesSomos.url} className="boton">{quienesSomos.boton}</a>
+            
           </button>
         </section>
       )}

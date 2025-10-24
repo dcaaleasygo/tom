@@ -58,6 +58,12 @@ export const Pages: CollectionConfig = {
                       label: 'Texto del botón',
                       required: false,
                     },
+                    {
+                      name: 'url',
+                      type: 'text',
+                      label: 'URL del botón',
+                      required: true
+                    },
                   ],
                 },
                 {
@@ -318,7 +324,8 @@ export const Pages: CollectionConfig = {
                 { name: 'titulo', type: 'text' },
                 { name: 'content', type: 'text' },
                 { name: 'file', type: 'upload', relationTo: 'media' },
-                { name: 'boton', type: 'text', label: 'boton', required: true }
+                { name: 'boton', type: 'text', label: 'boton', required: true },
+                { name: 'url',type: 'text',label: 'URL del botón',required: true},
               ],
             },
             {
@@ -335,7 +342,7 @@ export const Pages: CollectionConfig = {
               name: 'Vision',
               type: 'group',
               fields: [
-                { name: 'titulo', type: 'text' },
+                { name:  'titulo', type: 'text' },
                 { name: 'content', type: 'text' },
                 { name: 'file', type: 'upload', relationTo: 'media' },
                 { name: 'background', type: 'upload', relationTo: 'media' },

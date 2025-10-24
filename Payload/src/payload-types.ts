@@ -233,6 +233,7 @@ export interface Page {
                     }
                   | {
                       buttonText?: string | null;
+                      url: string;
                       id?: string | null;
                       blockName?: string | null;
                       blockType: 'buttonText';
@@ -400,6 +401,7 @@ export interface Page {
               content?: string | null;
               file?: (string | null) | Media;
               boton: string;
+              url: string;
             };
             Mision?: {
               titulo?: string | null;
@@ -621,6 +623,7 @@ export interface PagesSelect<T extends boolean = true> {
                       | T
                       | {
                           buttonText?: T;
+                          url?: T;
                           id?: T;
                           blockName?: T;
                         };
@@ -811,6 +814,7 @@ export interface PagesSelect<T extends boolean = true> {
                     content?: T;
                     file?: T;
                     boton?: T;
+                    url?: T;
                   };
               Mision?:
                 | T

@@ -276,12 +276,7 @@ export function Pages() {
                       <div className="Texto">
 
                         {bodyBlocks.map(item => {
-
-
                           if (item.blockType === 'text') return <p key={item.id}>{item.value}</p>
-
-
-
                           if (item.blockType === 'gif' || item.blockType === 'image') {
                             const mimeType = item.file.mimeType || ''
                             const selectedSize = item.file.sizes?.custom250 ? 'custom250' : item.file.size || 'medium'
@@ -298,11 +293,12 @@ export function Pages() {
                         {bodyBlocks.map(item => {
                           if (item.blockType === 'buttonText') {
                             return (
+                              <a href={item.url} className='go-formulario'>
 
                               <button key={item.id} type="button" className="boton">
-                                <a href={item.url} className="boton">{item.buttonText}</a>
                                 {item.buttonText}
                               </button>
+                              </a>
                             )
                           }
                           return null
@@ -592,7 +588,7 @@ export function Pages() {
                         {Array.isArray(block.logos) && block.logos.map((logo, i) => (
                           <a key={i} href={logo.url} target="_blank" rel="noopener noreferrer">
                             <img src={logo.imagen?.url} alt={logo.imagen?.alt || 'logo'} />     
-                          </a>
+                          </a>  
                         ))}
                       </div>
                     ))}

@@ -1,11 +1,9 @@
-
-
 .body-container {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  
+
 }
 
 .banner-Principal {
@@ -16,11 +14,11 @@
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   align-items: flex-start;
 
   color: #fff;
-  padding-left: 2rem;       
+  padding-left: 2rem;
 }
 
 .banner-Principal .Texto {
@@ -28,19 +26,19 @@
   flex-direction: column;
   gap: 10%;
   align-items: flex-start;
-  text-align: left;   
+  text-align: left;
   font-size: 300%;
-  margin: 1rem;    
+  margin: 1rem;
 }
 
 .banner-Principal .Texto p,
 .banner-Principal .Texto img {
-  margin: 0.5px 0; 
+  margin: 0.5px 0;
 }
 
 .Texto img {
-  max-width: 100%; 
-  height: auto;   
+  max-width: 100%;
+  height: auto;
 }
 
 .img-small {
@@ -91,16 +89,19 @@
 }
 
 .Texto button {
-  background-color: #ffffff;
-  color: blue; 
-  width: 350px; 
-  height: 60px; 
-  font-size: 24px; 
-  line-height: 60px;
-  text-align: center; 
-  box-sizing: border-box;
-  padding: 0; 
-  
+  width: 350px;
+  height: 60px;
+  margin-top: 30px;
+  padding-top: 21px;
+  padding-bottom: 21px;
+  border: 1px none #000;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1);
+  color: #121661;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
 }
 
 .Texto button:hover {
@@ -108,11 +109,11 @@
 }
 
 
-.body{
+.body {
   background-color: #fff;
 }
 
-.Subrayado{
+.Subrayado {
   width: 100%;
   height: 5px;
   margin: 1.5rem auto;
@@ -132,10 +133,10 @@
 
 .Decoracion {
   display: grid;
-  place-items: center; 
+  place-items: center;
 }
 
-.Subrayado-2{
+.Subrayado-2 {
   width: 5px;
   height: 100%;
   margin: 1.5rem auto;
@@ -164,8 +165,8 @@
 .banner-Secundario,
 .parte-2 {
   width: 100%;
-  min-height: 100vh;  
-  position: relative; 
+  min-height: 100vh;
+  position: relative;
 }
 
 
@@ -174,14 +175,14 @@
   flex-direction: column;
   gap: 10%;
   align-items: flex-start;
-  text-align: left;   
+  text-align: left;
   font-size: 300%;
-  margin: 1rem;    
+  margin: 1rem;
 }
 
 .banner-Secundario .Texto p,
 .banner-Secundario .Texto img {
-  margin: 0.5px 0; 
+  margin: 0.5px 0;
 }
 
 
@@ -191,15 +192,15 @@
   background-color: #fff;
   position: relative;
   width: 100%;
-  min-height: 100vh;   
-  
+  min-height: 100vh;
+
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: center; 
+  align-items: center;
 }
 
- .Titulo p {
+.Titulo p {
   margin-left: 23rem;
   color: #ff0000;
   margin-bottom: 3rem;
@@ -219,6 +220,7 @@
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -293,8 +295,8 @@
 }
 
 .Tendencias .Titulo h4 {
-margin: 0px 30px;
-    margin-right: 30px;
+  margin: 0px 30px;
+  margin-right: 30px;
   color: #121661;
   font-size: 40px;
   font-weight: 800;
@@ -303,17 +305,17 @@ margin: 0px 30px;
 
 .Lista {
   display: flex;
-  flex-wrap: wrap;       
-  gap: 1rem;              
+  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
 }
 
 .Lista button {
-  padding: 1rem 2rem;     
+  padding: 1rem 2rem;
   background-color: #ffffff;
   color: #0e66a3;
-  display: flex;         
-  align-items: center;     
+  display: flex;
+  align-items: center;
   justify-content: center;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   border: none;
@@ -341,16 +343,16 @@ margin: 0px 30px;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
 }
 
 .tendencia-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
 .tendencia-card img {
@@ -363,16 +365,18 @@ margin: 0px 30px;
 .tendencia-card:nth-child(1),
 .tendencia-card:nth-child(4) {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   grid-column: span 2;
+  height: auto; /* permite que se ajuste al contenido */
 }
 
 .tendencia-card:nth-child(1) img,
 .tendencia-card:nth-child(4) img {
-  width: 200%;
-  height: 48%;
-  object-fit: cover;
+  width: 500%; /* la mitad del card, el resto es el contenido */
+  height: 100%; /* ocupa toda la altura del card */
+  object-fit: cover; /* rellena sin deformar */
 }
+
 
 
 .tendencia-card-content {
@@ -415,25 +419,24 @@ margin: 0px 30px;
 }
 
 .info {
-  width: 22%;       
+  width: 22%;
   margin: 0 auto;
-  
   transform: translate(-70%, 80%);
 }
 
 
 
-.datos .titulo{
+.datos .titulo {
   font-size: 140%;
   size-adjust: 10rem;
 }
 
-.datos p{
+.datos p {
   font-size: 90%;
   size-adjust: 10rem;
 }
 
-.datos img{
+.datos img {
   width: 2.5rem;
   margin: 0.5rem;
 }
@@ -441,8 +444,9 @@ margin: 0px 30px;
 
 
 
-.form{
-  width: 21%;     
+#formulario .form {
+  width: 21%;
+
   height: 45vh;
   margin: 0 auto;
   transform: translate(48%, -45%);
@@ -450,15 +454,19 @@ margin: 0px 30px;
   border-radius: 2%;
 }
 
-.form .titulo {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #121661;;
-  margin-bottom: 1.5rem;
-  text-align: center;
+#formulario .form .titulo {
+  margin-top: 0px;
+  color: #121661;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  text-align: left;
+  margin-right: 10rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
 }
 
-.datos input {
+#formulario .datos input {
   margin-left: 2rem;
   width: 80%;
   padding: 0.6rem 0;
@@ -509,6 +517,6 @@ margin: 0px 30px;
 }
 
 
-.go-formulario{
+.go-formulario {
   scroll-behavior: smooth;
 }
